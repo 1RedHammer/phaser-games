@@ -165,11 +165,12 @@ function update ()
 function collectStar (player, star)
 {
     star.disableBody(true, true);
+    star.enableBody(true, Math.random(0,600), 0, true, true);
 
     //  Add and update the score
     score += 10;
     scoreText.setText('Score: ' + score);
-
+    /*
     if (stars.countActive(true) === 0)
     {
         //  A new batch of stars to collect
@@ -188,6 +189,13 @@ function collectStar (player, star)
         bomb.allowGravity = false;
 
     }
+    */
+   //make this bomb thing happen every few frames.
+    var bomb = bombs.create(x, 16, 'bomb');
+        bomb.setBounce(1);
+        bomb.setCollideWorldBounds(true);
+        bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+        bomb.allowGravity = false;
 }
 
 function hitBomb (player, bomb)
