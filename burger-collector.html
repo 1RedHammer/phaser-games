@@ -191,7 +191,7 @@ function collectStar (player, star)
     }
     */
    //make this bomb thing happen every few frames.
-   if(score%150===0){
+   if(score%500===0){
     var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
     var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
