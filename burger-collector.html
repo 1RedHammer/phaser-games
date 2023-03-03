@@ -110,7 +110,7 @@ function create ()
     stars.children.iterate(function (child) {
 
         //  Give each star a slightly different bounce
-        child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+        child.setBounceY(Phaser.Math.FloatBetween(0.3, 0.9));
 
     });
 
@@ -165,7 +165,7 @@ function update ()
 function collectStar (player, star)
 {
     star.disableBody(true, true);
-    star.enableBody(true, Phaser.Math.Between(0,600), 0, true, true);
+    star.enableBody(true, Phaser.Math.Between(0,800), 0, true, true);
 
     //  Add and update the score
     score += 10;
